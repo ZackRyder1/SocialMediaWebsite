@@ -1,0 +1,86 @@
+:host{
+    margin: 10rem;
+}
+
+.Post-Form{
+    border:black 2px solid;
+    width:50%;
+    margin:auto;
+    display:grid;
+    grid-template-areas:"title title"
+                        "file file"
+                        "cap cap"
+                        "preview preview"
+                        "preview preview"
+                        "submit submit";  
+    grid-row-gap: 2rem; 
+    padding: 2rem;
+    color: #ffa31a;
+    -webkit-box-shadow:  5px 5px 16px #ffa31a, -5px -5px 16px #ffa31a;
+    box-shadow:  8px 8px 16px #ffa31a, -8px -8px 16px #ffa31a;
+}
+
+.title{
+    grid-area:title;
+    justify-self: center;
+    align-self: center;
+}
+
+.file{
+    grid-area:file;
+    justify-self: center;
+    align-self: center;
+}
+
+.caption{
+    grid-area: cap;
+    justify-self: center;
+    align-self: center;
+
+}
+
+.Preview-Container{
+    grid-area:preview;
+    justify-self: center;
+    align-self: center;
+    height:25rem;
+    width:20rem;
+    border:white solid 2px;
+}
+
+#blah{
+    height: 100%;
+    width: 100%;
+}
+
+.submit{
+    grid-area:submit;
+    justify-self: center;
+    align-self: center;
+}
+
+.submit-button{
+    background-color: black;
+    color: #ffa31a;
+    border-radius: 5px;
+
+}
+
+.submit-button:hover,
+.submit-button:active{
+    background-color: #ffa31a;
+    color: black;
+}
+
+.error{
+    margin:auto;
+    border:red 2px solid;
+    background-color:   #ffa31a;
+    font-size: 0.7rem;
+    margin-top:2rem;
+    width:30%;
+    display:flex;   
+    justify-content: center;
+    align-items: center;
+    color:black;
+}

@@ -1,0 +1,41 @@
+.complete-field{
+    width: 100%;
+    display:grid;
+    grid-template-areas: "field field"
+                         "error error";
+    grid-column-gap: 1rem;
+    grid-row-gap: 3px;
+}
+
+.field{
+    display: grid;
+    grid-template-areas: "label input";
+    grid-column-gap: 1rem;
+    grid-area: field;
+}
+
+
+
+.input-field{
+    grid-area: input;
+    justify-self: center;
+    align-self: center;
+    width: 80%;
+}
+
+.label{
+    grid-area: label;
+    justify-self: center;
+    align-self: center;
+}
+
+.error {
+    grid-area:error;
+    border:red 2px solid;
+    padding:1px;
+    background-color: #ffa31a;
+    justify-self: center;
+    align-self: center;
+    font-size: 0.7rem;
+    color:black;
+}

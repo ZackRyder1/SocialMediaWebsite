@@ -1,0 +1,109 @@
+:host{
+    display: grid;
+    grid-template-areas:"CF CF CF CF"
+                        "CF CF CF CF"
+                        "C C C C"
+                        "C C C C"
+                        "C C C C"
+                        "C C C C"
+                        "C C C C"
+                        "P P P P";
+}
+
+.CommentForm-container{
+    grid-area: CF;
+}
+
+.Comment-Form{
+    display:grid;
+    grid-template-areas: "input input comment";
+}
+
+.comment{
+    grid-area: input;
+    justify-self: center;
+    width: 10rem;
+    height: 4rem;
+    background-color:black;
+    color: #ffa31a;
+}
+
+.submit{
+    grid-area: comment;
+    justify-self: flex-start;
+    align-self: center;
+}
+
+.submit-button{
+    background-color: black;
+    color: #ffa31a;
+    border-radius: 2px;
+
+}
+
+.submit-button:hover,
+.submit-button:active{
+    background-color: #ffa31a;
+    color: black;
+}
+
+.Comment-Box{
+    border:#f90 solid 2px;
+    margin-top: 1rem;
+    grid-area: C;
+}
+
+.No-Comment-Box{
+    border:#f90 solid 2px;
+    margin-top: 1rem;
+    grid-area: C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Comment-Container{
+    display: grid;
+    grid-template-areas:"image comm comm comm"
+                        "image comm comm comm";
+}
+
+.profile{
+   height: 2.7rem;
+   width: 2.7rem;
+   border:white solid 1px;
+   border-radius: 50%;
+   grid-area: image;
+   justify-self: center;
+   align-self: center;
+}
+
+.profile img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.Comment-body{
+    grid-area: comm;
+    font-family: 'Darker Grotesque', sans-serif;
+    justify-self: flex-start;
+    
+}
+
+.username{  
+    font-size:1.5rem;
+    font-weight: bold;
+
+}
+
+.real-comment{
+    font-size:1rem;
+}
+
+.paginator-container{
+    grid-area:P;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}

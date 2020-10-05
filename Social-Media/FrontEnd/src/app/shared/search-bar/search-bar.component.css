@@ -1,0 +1,108 @@
+/* body {
+    background-image: linear-gradient(to right , #cb2d3e , #ef473a);
+} */
+
+.searchBox {
+    position: absolute;
+    left: 50%;
+    transform:  translate(-50%,50%);
+    background: black;
+    height: 2.5rem;
+    border-radius: 40px;
+    padding: 10px;
+    z-index: 1;
+
+}
+
+.searchBox:hover > .searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+  background:#f90;
+  color : black;
+}
+
+.searchButton {
+    color:#f90;
+    float: right;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+.result-box{
+    background-color:rgba(0, 0, 0, 0.616);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.result-body{
+    display: grid;
+    grid-template-areas:"image comm comm comm"
+                        "image comm comm comm";
+    margin-bottom: 0.3rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.result-body:hover{
+    background-color: rgb(65, 65, 65);
+}
+
+
+.profile{
+    height: 2.0rem;
+    width: 2.0rem;
+    border:white solid 1px;
+    border-radius: 50%;
+    grid-area: image;
+    align-self: center;
+ }
+ 
+ .profile img{
+     height: 100%;
+     width: 100%;
+     border-radius: 50%;
+ }
+ 
+ 
+ .username{  
+     grid-area: comm;
+     font-size:1.0rem;
+     font-weight: bold;
+     color: #f90;
+     display: flex;
+     align-items: center;
+ 
+ }
+
+
+@media screen and (max-width: 620px) {
+.searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+}
+}

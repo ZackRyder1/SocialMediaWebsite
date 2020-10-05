@@ -1,0 +1,43 @@
+<div class="center">
+    <div class="property-card">
+        <div class="property-image" id="image" (click)="onClickPMVShow()">
+          <div class="property-image-title" >
+            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+          </div>
+        </div>
+      <div class="property-description">
+        <div class="post-description-container">
+          <p class="caption">{{ caption }}</p>
+        <div class="lc-container" *ngIf="likes !==0 && comments !==0">
+            <div class="like">
+              <p class="lc">{{ likes }}<br>Likes</p>
+            </div>
+            <div class="comment">
+              <p class="lc">{{ comments }}<br>Comments</p>
+            </div>
+        </div>    
+        </div>
+        </div>
+        <div class="property-social-icons">
+          <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
+          <div class="LCicons">
+            <div (click)="onLikeClick($event.target)" id="heart" class="LCicon fa">&#xf004;</div>
+            <div id="comment" (click)="onClickShow()" class="LCicon fa">&#xf0e6;</div>
+            <app-modal (close)="onCloseModal($event)" [id]="postId + ' Comments-Modal'" [postId]="postId" Title="Comments" [showModal]="whichModal">
+              <app-comments-modal-view [PostId]="postId" [showModal]="modalCommentVisible">
+              </app-comments-modal-view>
+            </app-modal>
+            <app-modal (close)="onCloseModal($event)" Title="Post" [id]="postId + ' PMV'" [postId]="postId" [showModal]="whichModal">
+              <app-post-modal-view [postId]="postId" [showModal]="modalPMVisible"
+              [imageUrl]="imageUrl" [Likes]="likes" [Comments]="comments"
+              [caption]="caption" (viewLikes)="viewLike($event)">
+              </app-post-modal-view>
+            </app-modal>
+          </div>
+          <div class="EDicons" *ngIf="EDVisible">
+              <div id="edit" (click)="onClickUMVShow()" class="EDicon fa">&#xf044;</div>
+              <div id="delete" (click)="onClickDMVShow()" class="EDicon fa">&#xf014;</div>
+          </div>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,19 @@
+<form class="Post-Form" [formGroup]="PostForm" (ngSubmit)="onSubmit()">
+    <h3 class="title">Add a Post</h3>
+    <app-input class="file" label="File" inputType="file" [control]="PostForm.get('file')" (change)="onFileChange($event)"></app-input>
+    <app-input  class="caption" label="Caption" inputType="text" [control]="PostForm.get('caption')"></app-input>
+    <div class="Preview-Container" *ngIf="imageSrc"><img id="blah" [src]="imageSrc" alt="your image" /></div>
+    <div class="submit"><button class="submit-button" type="submit">Submit</button></div>
+ </form>  
+
+ <div class="error red" *ngIf="PostForm.errors">
+    <p *ngIf="PostForm.errors.noImageSelected">
+        Select a Image First!!
+    </p></div>
+
+<div class="error red" *ngIf="message">
+    <p>
+      {{ message }}   
+</p></div>    
+
+

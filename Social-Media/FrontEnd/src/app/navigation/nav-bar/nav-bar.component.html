@@ -1,0 +1,27 @@
+<nav class="ui pointing menu navbar">
+    <div class="left-menu" >
+    <a class="item logo-container" routerLink="/">
+        <img class="logo" src="../../../assets/images/logo.png">
+    </a>            
+    <a class="item" [routerLink]="['/home',userId]" routerLinkActive="active" *ngIf="(signedIn |async)">
+      Home
+    </a>
+    <a class="item" routerLink="/feed/true" routerLinkActive="active" *ngIf="(signedIn |async)">
+        Feed
+    </a>
+    <a class="item" routerLink="/discover" routerLinkActive="active" *ngIf="(signedIn |async)">
+      Discover!
+    </a>
+   </div>
+    <div class="right-menu">
+        <a class="item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="!(signedIn |async)">
+        Sign In
+        </a>
+      <a class="item" routerLink="/signUp" routerLinkActive="active" *ngIf="!(signedIn |async)">
+        Sign Up
+      </a>
+      <a class="item" routerLink="/signOut" routerLinkActive="active" *ngIf="(signedIn |async)">
+        Sign Out
+      </a>
+    </div>
+  </nav>

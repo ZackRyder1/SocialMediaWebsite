@@ -1,0 +1,109 @@
+:host{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:"con con con con"
+                        "con con con con"
+                        "err err err err";
+    align-content: center;
+}
+
+.parent-container{
+    grid-area: con;
+    display: flex;
+    justify-content: center;
+}
+
+.sublogo-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.subtitle-container{
+    align-self: center;
+}
+
+.subtitle-content{
+    display: block;
+    text-align: center;
+}
+
+
+.SignUp-Form{
+    border:black 2px solid;
+    width:40%;
+    margin:auto;
+    display:grid;
+    grid-template-areas:"title title"
+                        "email email"
+                        "pass pass"
+                        "submit submit";  
+    grid-row-gap: 2rem; 
+    padding: 2rem;
+    color:#ffa31a;
+}
+
+.email{
+    grid-area: email;
+    justify-self: center;
+    align-self: center;
+
+}
+
+.password{
+    grid-area: pass;
+    justify-self: center;
+    align-self: center;
+}
+
+
+.title{
+    grid-area: title;
+    justify-self: center;
+    align-self: center;
+}
+
+
+
+.submit{
+    grid-area: submit;
+    justify-self: center;
+    align-self: center;
+}
+
+.submit-button{
+    background-color: black;
+    color: #ffa31a;
+    border-radius: 2px;
+
+}
+
+.submit-button:hover,
+.submit-button:active{
+    background-color: #ffa31a;
+    color: black;
+}
+
+.subtitle{
+    color:white;
+}
+
+.error{
+    margin:auto;
+    border:red 2px solid;
+    background-color:   #ffa31a;
+    font-size: 0.7rem;
+    margin-top:2rem;
+ 
+    display:flex;   
+    justify-content: center;
+    align-items: center;
+    color:black;
+    grid-area: err;
+    justify-self: center;
+    align-self: center;
+}
+

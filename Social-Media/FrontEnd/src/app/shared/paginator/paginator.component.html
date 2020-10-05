@@ -1,0 +1,13 @@
+<ng-container *ngIf="totalPages">
+<ul class="page-list">
+    <li (click)="Prev()" class="page-direct" *ngIf="currentPage>1">
+        &lt; Prev
+    </li>
+    <li (click)="onClick(page)" [ngClass]=" page === currentPage ? 'active' : ''"class="page " *ngFor="let page of pageOptions">
+       {{ page }}
+    </li>
+    <li (click)="Next()" class="page-direct" *ngIf="currentPage<totalPages">
+        Next &gt;
+    </li>
+</ul>
+</ng-container>

@@ -1,0 +1,120 @@
+:host{
+    display: grid;
+    grid-template-areas:"C C C C"
+                        "C C C C"
+                        "C C C C"
+                        "C C C C"
+                        "C C C C"
+                        "P P P P";
+}
+
+.Like-Box{
+    border:#f90 solid 2px;
+    margin-top: 1rem;
+    grid-area: C;
+}
+
+.Like-Box div{
+    margin-top: 0.5rem;
+}
+
+.No-Box{
+    border:#f90 solid 2px;
+    margin-top: 1rem;
+    grid-area: C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Like-Container{
+    display: grid;
+    grid-template-areas:"image comm comm comm"
+                        "image comm comm comm";
+    margin-bottom: 1rem;
+}
+
+.profile{
+   height: 2.7rem;
+   width: 2.7rem;
+   border:white solid 1px;
+   border-radius: 50%;
+   grid-area: image;
+   justify-self: center;
+   align-self: center;
+}
+
+.profile img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.Like-body{
+    grid-area: comm;
+    font-family: 'Darker Grotesque', sans-serif;
+    justify-self: flex-start;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    
+}
+
+.username{  
+    font-size:1.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+
+.follow{
+    color: #f90;
+    font-family: "Helvetica";
+    font-size: 10pt;
+    background-color: black;
+    border: 1px solid;
+    border-color: #f90;
+    border-radius: 3px;
+    width: 85px;
+    height: 30px;
+    margin-right: 1rem;
+    cursor: hand;		    
+  }
+
+.follow:hover,
+.follow:active{
+    color: black;
+    border: 1px solid;
+    border-color:black;
+    background-color: #f90;
+}
+
+.unfollow{
+    color: black;
+    font-family: "Helvetica";
+    font-size: 10pt;
+    background-color: #f90;
+    border: 1px solid;
+    border-color:black;
+    border-radius: 3px;
+    width: 85px;
+    margin-right: 1rem;
+    cursor: hand;		    
+  } 
+
+.unfollow:hover,
+.unfollow:active{
+      color: #f90;
+      border: 1px solid;
+      border-color:#f90;
+      background-color: black;
+}
+
+.paginator-container{
+    grid-area:P;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}

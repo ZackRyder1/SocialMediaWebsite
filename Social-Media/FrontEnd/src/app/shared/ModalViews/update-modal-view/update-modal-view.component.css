@@ -1,0 +1,37 @@
+.updateForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.caption-field-container{
+    margin: 2rem 0;
+}
+
+.caption{
+    width:20rem;
+    height: 5rem;
+    background-color:black;
+    opacity: 1;
+    color: #ffa31a;
+}
+
+.submit{
+    grid-area: comment;
+    justify-self: flex-start;
+    align-self: center;
+}
+
+.submit-button{
+    background-color: black;
+    color: #ffa31a;
+    border-radius: 2px;
+
+}
+
+.submit-button:hover,
+.submit-button:active{
+    background-color: #ffa31a;
+    color: black;
+}

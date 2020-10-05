@@ -1,0 +1,8 @@
+    <form class="updateForm" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+        <div class="caption-field-container">
+            <textarea formControlName="caption" class="caption"></textarea>
+        </div>
+        <div class="submit">
+            <button class="submit-button" type="submit">Submit</button>
+        </div>
+    </form>

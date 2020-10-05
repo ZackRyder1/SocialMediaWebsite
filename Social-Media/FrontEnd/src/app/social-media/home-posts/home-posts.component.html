@@ -1,0 +1,2 @@
+<app-card-grid class="Post-container" [CardData]="cards" [currentPage]="current_page" [type]="type"></app-card-grid>
+<app-paginator  class="Paginator" [currentPage]="current_page" [totalPages]="totalPages" (changeCurrent)="changePage($event)" class="Paginator"></app-paginator>

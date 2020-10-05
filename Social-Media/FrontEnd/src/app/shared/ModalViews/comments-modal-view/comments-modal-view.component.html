@@ -1,0 +1,24 @@
+<div class="CommentForm-container">
+    <form class="Comment-Form" [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+        <textarea type="text" class="comment" formControlName="comment" ></textarea>
+        <div class="submit"><button class="submit-button" type="submit">Comment</button></div>
+    </form>
+</div>
+<div class="No-Comment-Box"  *ngIf="!comments || comments.length === 0">
+    No Comments to Show!!!
+</div> 
+<ng-container *ngIf="comments">  
+<div class="Comment-Box"  *ngIf="comments.length>0">
+    <div class="Comment-Container" *ngFor="let comment of comments">
+        <div class="profile">
+            <img class="picture" [src]="comment.userId.profileURL">
+        </div>
+        <div class="Comment-body">
+            <div class="username">{{ comment.username }}</div>
+            <div class="real-comment">{{ comment.comment }}</div>
+        </div>
+    </div>
+</div>
+<div class="paginator-container"><app-paginator class="paginator" [totalPages]="totalPages" (changeCurrent)="changePage($event)"></app-paginator></div>
+</ng-container>
+

@@ -1,0 +1,14 @@
+<!-- <h1>Popup/Modal Windows without JavaScript</h1>
+<div class="box">
+	<span (click)="onClick()" class="button">Let me Pop up</span>
+</div> -->
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>{{ title }}</h2>
+		<button class="close" (click)="onClick(false)">&times;</button>
+		<div class="content">
+			<ng-content></ng-content>
+		</div>
+	</div>
+</div>

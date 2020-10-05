@@ -1,0 +1,30 @@
+.Delete-Modal{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    align-self: center;
+    margin-bottom: 2rem;
+    font-size:1.3rem;
+}
+
+.actions{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.button{
+    background-color:black;
+    color:#f90;
+    margin:0 5px;
+}
+
+.button:hover,
+.button:active{
+    background-color:#f90;
+    color:black;
+}
+
+

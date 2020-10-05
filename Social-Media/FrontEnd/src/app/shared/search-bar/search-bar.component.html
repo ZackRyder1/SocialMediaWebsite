@@ -1,0 +1,18 @@
+<div class="searchBox">
+
+    <input class="searchInput" (input)="onChange($event.target.value)" type="text" name="" placeholder="Search">
+    <button (click)="onSearchClick()" class="searchButton" href="#">
+        <i style="font-size:24px" class="fa">
+            &#xf002;
+        </i>
+    </button>
+    <div class="result-box"  *ngIf="resultVisible && searchResults && searchResults.length >0">
+        <a class="result-body"  [routerLink]="['/user',result._id]" *ngFor="let result of searchResults">
+            <div class="profile">
+                <img class="picture" [src]="result.profileURL">
+            </div>
+            <div class="username">{{ result.username }}</div>
+        </a>
+    </div>
+    
+</div>

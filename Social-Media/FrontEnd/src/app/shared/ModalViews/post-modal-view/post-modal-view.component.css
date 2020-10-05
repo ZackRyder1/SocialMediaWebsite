@@ -1,0 +1,48 @@
+.Post-container{
+    display:grid;
+    grid-template-areas:"img img img img img"
+                        "img img img img img"
+                        "img img img img img"
+                        "img img img img img"
+                        "img img img img img"
+                        "cap cap cap cap cap "
+                        "LC LC LC LC LC"
+                        "LC LC LC LC LC";
+}
+
+.image-container{
+    grid-area: img;
+    background-color: black;
+    border:4px solid #f90;
+}
+
+#post-image{
+    height: 100%;
+    width: 100%;
+}
+
+.Post-Info{
+    grid-area : LC;
+    display:flex;
+}
+
+.caption{
+    grid-area: cap;
+    margin: 1rem 0;
+}
+
+.Likes{
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.comments{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

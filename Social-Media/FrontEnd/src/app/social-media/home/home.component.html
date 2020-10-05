@@ -1,0 +1,52 @@
+<div class="Status-parent-container">
+   <div class="Status-profile-container">
+        <div class="profile-container">
+            <form class="profile-form" [formGroup]="ProfileForm" (ngSubmit)="onSubmit()">
+                <label for="fileToUpload">
+              <div class="profile-pic" id="profileURL">
+                  <span class="glyphicon glyphicon-camera"></span>
+                  <span>Change Image</span>
+              </div>
+              </label>
+              <input type="File" formControlName="file" id="fileToUpload" (change)="onFileChange($event)">
+              <button type="submit" class="submit" *ngIf="submitVisible">Add Pic</button>
+            </form>
+        </div>
+        <div class="Status-username-container">
+            <p class="username">{{ user.username }}</p>
+        </div>
+   </div> 
+   <button class="follow-button follow" *ngIf="followVisible && follow" (click)="onFollowClick($event.target)" >Follow</button>
+   <button class="follow-button follow" *ngIf="followVisible && !follow" (click)="onFollowClick($event.target)" >UnFollow</button>
+   <div class="Status-items-container">
+       <ul class="Status-items">
+           <li class="item">
+            <div id="post" class="item-container">
+               <div>{{ user.postsCount }}</div>
+               <div>Posts</div>
+            </div>
+            </li>
+            <li class="item" (click)="onFollowersClick()">
+                <div id="followers" class="item-container">
+                   <div>{{ user.followers }}</div>
+                   <div>Followers</div>
+                </div>
+            </li>
+            <app-modal [id]="type" [Title]="whichModal | titlecase" [showModal]="whichModal" (close)="onCloseModal($event)">
+                    <app-lffmodal-view [type]="type" [showModal]="showLFFModal" [Id]="user.userId" >
+                    </app-lffmodal-view>
+            </app-modal>                
+            <li class="item" (click)="onFollowingClick()">
+                <div id="following" class="item-container">
+                    <div>{{ user.following }}</div>
+                    <div>Following</div>
+                </div>
+            </li>
+       </ul>
+   </div>
+</div>
+<div class="PostNav-parent-container">
+        <a class="PostNav-item" [routerLink]="[postType,userId]" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}">All Posts</a>
+        <a class="PostNav-item" routerLink='addPost' *ngIf="AddPostVisible" routerLinkActive="active">Add Post</a>
+</div>
+<div class="Post-container"><router-outlet></router-outlet></div>

@@ -1,0 +1,20 @@
+<app-post-card  (postId)="showDMVModal($event)" (caption)="showUMVModal($event)" 
+class="card" *ngFor="let card of cardData;let i=index" 
+[PostId]="card._id" [imageUrl]="card.imageURL" 
+[caption]="card.Caption" [Likes]="card.likes" 
+[Comments]="card.comments" (viewLikes)="showLikeModal(  $event)">
+</app-post-card>
+<app-modal [id]="'UMV '+ type" Title="Update Caption" [showModal]="whichModal" (close)="onUMVCloseModal($event)" [type]="type">
+    <app-update-modal-view [showModal]="showUpdateModal" [captionPost]="captionPostUMV" [type]="type">
+
+    </app-update-modal-view>
+</app-modal>
+<app-modal [id]="'DMV ' + type" Title="Delete Post" [showModal]="whichModal" (close)="onDMVCloseModal($event)" (cancel)="onDMVCancelModal($event)" [cancel]="cancelDMV" [type]="type">
+    <app-delete-modal-view [showModal]="showDeleteModal" [postId]="postIdDMV" [currentPage]="currentPage" (cancel)="onDMVCancel($event)" [type]="type">
+
+    </app-delete-modal-view>
+</app-modal>
+<app-modal [id]="'like '+ type" Title="Likes" [showModal]="whichModal" (close)="onLikeCloseModal($event)" [type]="type">
+<app-lffmodal-view type="like" [showModal]="showLFFModal" [Id]="likePostId" [whereType]="type">
+</app-lffmodal-view>
+</app-modal>

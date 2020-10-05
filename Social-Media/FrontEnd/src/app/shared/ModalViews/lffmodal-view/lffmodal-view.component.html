@@ -1,0 +1,29 @@
+<div class="No-Box"  *ngIf="ModalType === 'like '+ type && data && data.length<=0">
+   No Likes to Show!!!
+</div> 
+<div class="No-Box"  *ngIf="ModalType === 'followersModal' && data && data.length<=0">
+    No Followers to Show!!!
+ </div> 
+ <div class="No-Box"  *ngIf="ModalType === 'followingModal' && data && data.length<=0">
+    No Following to Show!!!
+ </div> 
+<ng-container *ngIf="data"> 
+    <div class="Like-Box">
+        <div class="Like-Container" *ngFor="let item of data;let i =index">
+            <div class="profile">
+                <img class="picture" [src]="item.userId.profileURL">
+            </div>
+            <div class="Like-body">
+                <div class="username">{{ item.username }}</div>
+            <ng-container *ngIf="ModalType === 'followersModal'">
+                    <button (click)="onFollowClick($event.target,i)"  class="follow" *ngIf="!item.followed">Follow</button>
+                    <button (click)="onFollowClick($event.target,i)"  class="follow" *ngIf="item.followed">UnFollow</button>
+            </ng-container>    
+            <ng-container *ngIf="ModalType === 'followingModal'">
+                <button (click)="onFollowClick($event.target,i)" class="follow" *ngIf="isFollowed">UnFollow</button>
+            </ng-container>
+            </div>
+        </div>
+    </div>
+    <div class="paginator-container"><app-paginator class="paginator" [totalPages]="totalPages" (changeCurrent)="changePage($event)"></app-paginator></div>
+</ng-container>

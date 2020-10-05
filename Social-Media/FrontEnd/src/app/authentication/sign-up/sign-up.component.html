@@ -1,0 +1,27 @@
+<div class="parent-container">
+    <div class="sublogo-container">
+        <div class="logo-container">    
+            <img class="logo-big" src="../../../assets/images/logo.png">
+        </div>
+        <div class="subtitle-container"> 
+            <h2 class="subtitle"><span class="subtitle-content">Dhaigram as a lot to offer</span><span class="subtitle-content"> than you think!!</span></h2>
+        </div>
+</div>
+
+
+<form class="SignUp-Form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+    <h3 class="title">Sign Up Form</h3>
+    <app-input  class="email" label="Email" inputType="email" [control]="authForm.get('email')"></app-input>
+    <app-input  class="username" label="Username" inputType="text" [control]="authForm.get('username')"></app-input>
+    <app-input class="password" label="Password" inputType="password" [control]="authForm.get('password')"></app-input>
+    <app-input class="passwordC" label="Password Confirmation" inputType="password" [control]="authForm.get('passwordConfirmation')"></app-input>
+    <div class="submit"><button class="submit-button" type="submit">Submit</button></div>
+</form>
+</div>
+<div class="error red" *ngIf="authForm.get('password').touched && authForm.get('passwordConfirmation').touched && 
+authForm.get('password').dirty && authForm.get('passwordConfirmation').dirty && authForm.errors ">
+    <p *ngIf="authForm.errors.PasswordDontMatch">
+        Password and Password Confirmation should match!
+    </p></div>
+
+

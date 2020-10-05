@@ -1,0 +1,29 @@
+<div class="complete-field">
+<div class="field" >
+    <label class="label">{{ label }}</label>
+    <input [type]="inputType" class="input-field" [formControl]="control"/>
+</div>
+<div class="error red" *ngIf="showErrors()">
+    <p *ngIf="control.errors.required">
+        Value is Required
+    </p>
+    <p *ngIf="control.errors.email">
+        Value should be a Email!
+    </p>
+    <p *ngIf="control.errors.minlength">
+        Password should be atleast {{ control.errors.minlength.requiredLength }} characters but is {{ control.errors.minlength.actualLength }} characters. 
+    </p>
+    <p *ngIf="control.errors.maxlength">
+        Password should be max {{ control.errors.maxlength.requiredLength }} characters but is {{ control.errors.maxlength.actualLength }} characters.
+    </p>
+    <p *ngIf="control.errors.EmailExists">
+        Email already exists!
+    </p>
+    <p *ngIf="control.errors.UserExists">
+        Username is Taken!
+    </p>
+    <p *ngIf="control.errors.noConnection">
+        It seems your connection is down 
+    </p>
+</div>
+</div>

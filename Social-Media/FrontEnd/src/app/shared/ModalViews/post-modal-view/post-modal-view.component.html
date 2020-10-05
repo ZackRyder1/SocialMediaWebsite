@@ -1,0 +1,18 @@
+<div class="Post-container">
+    <div id="image-containerPMV" class="image-container">
+        <img id="post-image" [src]="imageUrl">
+    </div>
+    <div class="caption">
+        #{{ caption }}
+    </div>
+    <div class="Post-Info">
+        <div class="Likes" (click)="viewLikes()">
+            <div class="NL">{{ likes }}</div>
+            <div class="Like">Likes</div>
+        </div>
+        <div class="comments">
+            <div class="NC">{{ comments }}</div>
+            <div class="Comment">Comments</div>
+        </div>
+    </div>
+</div>
