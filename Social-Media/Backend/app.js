@@ -75,7 +75,7 @@ app.use((error,req,res,next)=>{
 
 
 mongoose
-.connect("mongodb+srv://zack_ryder:zaki7038@cluster0.fpflc.mongodb.net/socialMedia?retryWrites=true&w=majority")
+.connect("Your connection string goes here")
 .then((result)=>{
     app.listen(8080);
 })
